@@ -37,6 +37,16 @@ Installation
 $ pip install djantimat
 ```
 
+Добавление модуля в джанго:
+```python
+INSTALLED_APPS += ('djantimat',)
+```
+синхронизация модели:
+```bash
+$ python manage.py migrate
+$ python manage.py syndb # для добавления существующей базы слов
+```
+
 Dependencies
 ------------
 [Pymorphy2](https://pypi.python.org/pypi/pymorphy2/)
