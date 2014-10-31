@@ -5,10 +5,13 @@ Detect dirty slang in russian texts and process it.
 Develope for Django 1.7 but may use it without this framework partly.
 """
 
-VERSION = (0, 1, 0,)
+VERSION = (0, 1, 1,)
 __version__ = '.'.join(map(str, VERSION))
 
-from django.apps import AppConfig
+try:
+    from django.apps import AppConfig
+except ImportError:
+    class AppConfig(object): pass
 
 
 default_app_config = 'djantimat.DjAntiMatConfig'
