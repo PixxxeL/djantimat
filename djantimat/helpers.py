@@ -13,7 +13,6 @@ word_pattern = ur'[А-яA-z0-9\-]+'
 class PymorphyProc(object):
 
     morph = pymorphy2.MorphAnalyzer()
-    words = Slang.objects.values_list('word', flat=True)
 
     @staticmethod
     def test(text):
@@ -41,9 +40,13 @@ class PymorphyProc(object):
             if len(word) < 3:
                 continue
             normal_word = PymorphyProc.morph.parse(word.lower())[0].normal_form
-            if normal_word in PymorphyProc.words:
+            if normal_word in PymorphyProc.get_words():
                 #print normal_word.encode('1251'), word.encode('1251')
                 yield word
+
+    @staticmethod
+    def get_words():
+        return Slang.objects.values_list('word', flat=True)
 
 
 class RegexpProc(object):

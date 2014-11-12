@@ -5,7 +5,7 @@ Detect dirty slang in russian texts and process it.
 Develope for Django 1.7 but may use it without this framework partly.
 """
 
-VERSION = (0, 1, 1,)
+VERSION = (0, 1, 2,)
 __version__ = '.'.join(map(str, VERSION))
 
 try:
