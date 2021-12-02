@@ -10,7 +10,7 @@ setup(
     author_email = 'ivan.n.sergeev@gmail.com',
     maintainer = 'pixel',
     maintainer_email = 'ivan.n.sergeev@gmail.com',
-    license = 'GPL3',
+    license = 'MIT',
     description = 'Detect dirty slang in russian texts and process it',
     download_url = 'https://github.com/PixxxeL/djantimat/archive/master.zip',
     classifiers = [
