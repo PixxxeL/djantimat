@@ -29,7 +29,7 @@ class PymorphyProc(object):
     def wrap(text, wrap=('<span style="color:red;">', '</span>',)):
         words = {}
         for word in PymorphyProc._gen(text):
-            words[word] = b'%s%s%s' % (wrap[0], word, wrap[1],)
+            words[word] = u'%s%s%s' % (wrap[0], word, wrap[1],)
         for word, wrapped in words.items():
             text = text.replace(word, wrapped)
         return text
@@ -51,7 +51,7 @@ class PymorphyProc(object):
 
 class RegexpProc(object):
 
-    PATTERN_1 = ur''.join((
+    PATTERN_1 = r''.join((
         r'\w{0,5}[хx]([хx\s\!@#\$%\^&*+-\|\/]{0,6})',
         r'[уy]([уy\s\!@#\$%\^&*+-\|\/]{0,6})[ёiлeеюийя]\w{0,7}|\w{0,6}[пp]',
         r'([пp\s\!@#\$%\^&*+-\|\/]{0,6})[iие]([iие\s\!@#\$%\^&*+-\|\/]{0,6})',
@@ -107,7 +107,7 @@ class RegexpProc(object):
             if len(word) < 3:
                 continue
             if RegexpProc.regexp.findall(word):
-                words[word] = b'%s%s%s' % (wrap[0], word, wrap[1],)
+                words[word] = u'%s%s%s' % (wrap[0], word, wrap[1],)
         for word, wrapped in words.items():
             text = text.replace(word, wrapped)
         return text
